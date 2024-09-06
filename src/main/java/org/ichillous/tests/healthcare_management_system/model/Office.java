@@ -28,8 +28,9 @@ public class Office {
     private String phone;
 
     @OneToOne
-    @JoinColumn(name = "DoctorId")
+    @JoinColumn(name = "DoctorID")
     private Doctor doctor;
+
 
     @Override
     public boolean equals(Object o) {

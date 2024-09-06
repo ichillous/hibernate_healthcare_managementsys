@@ -7,29 +7,29 @@ import java.util.List;
 
 public class OfficeService {
 
-    private OfficeRepository officeRepository;
+    private final OfficeRepository officeRepository;
 
     public OfficeService(OfficeRepository officeRepository) {
         this.officeRepository = officeRepository;
     }
 
     public void createOffice(Office office) {
-        officeRepository.createOffice(office);
+        officeRepository.create(office);
     }
 
-    public Office getOfficeById(int officeId){
-        return officeRepository.getOfficeById(officeId);
+    public Office getOfficeById(int id) {
+        return officeRepository.findById(id);
     }
 
     public List<Office> getAllOffices() {
-        return officeRepository.getAllOffices();
+        return officeRepository.findAll();
     }
 
     public void updateOffice(Office office) {
-        officeRepository.updateOffice(office);
+        officeRepository.update(office);
     }
 
-    public void deleteOffice(int officeId) {
-        officeRepository.deleteOffice(officeId);
+    public void deleteOffice(int id) {
+        officeRepository.delete(id);
     }
 }

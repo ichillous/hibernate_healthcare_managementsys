@@ -36,11 +36,11 @@ public class Doctor {
     @Column(name = "Email")
     private String email;
 
-    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
-    private Set<Appointment> appointments = new HashSet<>();
-
     @OneToOne(mappedBy = "doctor", cascade = CascadeType.ALL)
     private Office office;
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+    private Set<Appointment> appointments = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

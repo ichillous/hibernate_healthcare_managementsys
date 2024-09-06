@@ -5,9 +5,9 @@ import org.ichillous.tests.healthcare_management_system.model.Office;
 import java.util.List;
 
 public interface OfficeRepository {
-    void createOffice(Office office);
-    Office getOfficeById(int officeId);
-    List<Office> getAllOffices();
-    void updateOffice(Office office);
-    void deleteOffice(int officeId);
+    void create(Office office);
+    Office findById(int id);
+    List<Office> findAll();
+    void update(Office office);
+    void delete(int id);
 }
